@@ -5,6 +5,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
+
+import styles from "./tailwind.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+];
+
 
 export default function App() {
   return (
@@ -19,6 +27,7 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
       </body>
     </html>
   );
